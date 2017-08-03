@@ -1,0 +1,25 @@
+<section data-ng-controller="LocationController">
+	<div class="container-fluid ">
+		<div class="row modal-header bg-primary">
+		<div class="col-xs-12">
+		
+
+			<div class=" input-group ">
+          <input type="text" class="form-control" placeholder="Search">
+           <span class="input-group-btn">
+           <button type="submit" class="btn btn-default">
+             <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+           </button>
+        </div>
+		</div>
+			
+		</div>
+		<div class="row pad12">
+			<div class="col-xs-6 col-md-4 pad12 cursor" data-ng-repeat="loc in locations" style="background-color: #efefef;border: 0.001em solid white;" data-ng-click="chooseThisLoc(loc)">
+				{{loc.name}}
+			</div>
+		</div>
+
+
+	</div>
+</section>

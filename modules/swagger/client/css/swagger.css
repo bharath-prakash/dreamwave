@@ -1,0 +1,16 @@
+.swagger-nav {
+	width: 180px;
+	top: 64px;
+	border:1px solid black;
+	position: absolute;
+}
+
+.swagger-ui-main{
+	padding-left: 180px;
+}
+
+.swagger-switch{
+	position: relative;
+	right: 0px;
+	bottom: 0px;
+}

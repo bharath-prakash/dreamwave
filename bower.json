@@ -1,0 +1,24 @@
+{
+  "name": "getitdone",
+  "version": "0.4.0",
+  "description": "services, consumer",
+  "dependencies": {
+    "angular": "~1.6",
+    "angular-resource": "~1.6",
+    "angular-animate": "~1.6",
+    "angular-sanitize": "~1.6",
+    "angular-mocks": "~1.6",
+    "angular-ui-utils": "bower",
+    "angular-ui-router": "~1.0",
+    "angular-file-upload": "~2.5.0",
+    "angularjs-geolocation": "^0.1.1",
+    "angular-google-maps": "^2.4.1",
+    "angular-cookies": "^1.6.4",
+    "angular-material": "^1.1.4",
+    "angular-materialize": "^0.2.2",
+    "jquery": "^2.1.1"
+  },
+  "resolutions": {
+    "angular": "~1.6"
+  }
+}

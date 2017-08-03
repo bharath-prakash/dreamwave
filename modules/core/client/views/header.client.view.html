@@ -1,0 +1,86 @@
+<div class="" data-ng-controller="HeaderController">
+
+ <nav>
+    <div class="nav-wrapper  blue-grey darken-3">
+    <a href="#" class="nav_lnk" data-activates="main-sidenav" data-sidenav="left" data-menuwidth="252" data-closeonclick="true"><i class="small material-icons">view_module</i></a>
+      <a data-ui-sref="home" class="brand-logo">DreamWave™</a>
+      <a href="#" class="app-cntx">{{currapp}}</a>
+      <ul id="nav-mobile" class="top_nav right hide-on-med-and-down">
+        <li><a href="#" class="" data-ng-class="new_notification"><i class="material-icons">notifications</i></a></li>
+        <li><a href="#"><i class="material-icons md-24">settings</i></a></li>
+        <li><a data-ui-sref="authentication.signin" data-ng-hide="authentication.user">Login</a></li>
+        <li data-ng-show="authentication.user">
+        <a class=" "  data-activates="profileDropdown" dropdown data-hover="true">
+          <img data-ng-src="{{authentication.user.profileImageURL}}" alt="{{authentication.user.displayName}}" class="header-profile-image" />
+          <span data-ng-bind="authentication.user.displayName"></span> <b class="caret"></b>
+        </a>
+
+
+
+        <ul class="dropdown-content" id="profileDropdown">
+          <li data-ui-sref-active="active">
+            <a data-ui-sref="settings.profile">Edit Profile</a>
+          </li>
+          <li data-ui-sref-active="active">
+            <a data-ui-sref="settings.picture">Change Profile Picture</a>
+          </li>
+          <li data-ui-sref-active="active" data-ng-show="authentication.user.provider === 'local'">
+            <a data-ui-sref="settings.password">Change Password</a>
+          </li>
+          <li data-ui-sref-active="active">
+            <a data-ui-sref="settings.accounts">Manage Social Accounts</a>
+          </li>
+          <li class="divider"></li>
+          <li>
+            <a href="/api/auth/signout" target="_self">Signout</a>
+          </li>
+        </ul>
+      </li>
+        
+        
+      </ul>
+    </div>
+  </nav>
+  <ul id="main-sidenav" class="side-nav ">
+  <li>
+
+  <div class="row">
+        <div ng-repeat="ms in navservices" class="col s4 itembox">
+          <div class="card blue-grey darken-1" data-ng-click="goto(ms.lnk,ms.name)">
+            <div class="card-content white-text center-align">
+              <span class="card-title"><i class="material-icons center-align md-24">{{ms.icon}}</i></span>
+              <p class="label">{{ms.name}}</p>
+              </div>
+        </div>
+      </div>
+     </div>
+     </li> 
+     
+  
+    <li><div class="divider"></div></li>
+    <li><a class="subheader">Tools</a></li>
+    <li> <div class="row">
+        <div ng-repeat="ms in tools" class="col s4 itembox">
+          <div class="card blue-grey darken-1" data-ng-click="goto(ms.lnk,ms.name)">
+            <div class="card-content white-text center-align">
+              <span class="card-title"><i class="material-icons center-align md-24">{{ms.icon}}</i></span>
+              <p class="label">{{ms.name}}</p>
+              </div>
+        </div>
+      </div>
+     </div></li>
+       <li data-ng-show="authentication.user.roles.includes('admin')"><div class="divider"></div></li>
+    <li data-ng-show="authentication.user.roles.includes('admin')"><a class="subheader">Administration</a></li>
+    <li data-ng-show="authentication.user.roles.includes('admin')"> <div class="row">
+        <div ng-repeat="ms in adminsrv" class="col s4 itembox">
+          <div class="card blue-grey darken-1" data-ng-click="goto(ms.lnk,ms.name)">
+            <div class="card-content white-text center-align">
+              <span class="card-title"><i class="material-icons center-align md-24">{{ms.icon}}</i></span>
+              <p class="label">{{ms.name}}</p>
+              </div>
+        </div>
+      </div>
+     </div></li>
+  </ul>
+</div>
+   

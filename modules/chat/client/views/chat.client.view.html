@@ -1,0 +1,29 @@
+<!-- The chat view -->
+<section class="container" data-ng-controller="ChatController">
+  <div class="page-header">
+    <h4>Chat</h4>
+  </div>
+  <!-- The message form -->
+  <form class="col s12 m4 offset-m4" ng-submit="sendMessage();">
+    <fieldset class="row">
+      <div class="input-group">
+        <input type="text" id="messageText" name="messageText" class="form-control" data-ng-model="messageText" placeholder="Enter new message">
+        <span class="input-group-btn">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </span>
+      </div>
+    </fieldset>
+  </form>
+  <ul class="list-unstyled row" style="overflow: hidden;">
+    <!-- List all messages -->
+    <li class="col s12 offset-m4 m4 chat-message" data-ng-repeat="message in messages">
+      <small class="right text-muted" data-ng-bind="message.created | date:'mediumTime'"></small>
+      <img data-ng-src="{{message.profileImageURL}}" alt="{{message.username}}" class="left chat-profile-image" />
+      <div class="left chat-message-details">
+        <strong data-ng-bind="message.username"></strong>
+        <br>
+        <span data-ng-bind="message.text"></span>
+      </div>
+    </li>
+  </ul>
+</section>
